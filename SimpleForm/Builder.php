@@ -33,7 +33,6 @@ class Builder
 	{
 		foreach (self::$modules as $module)
 		{
-			echo strtolower(get_class($module));
 			if (strtolower(get_class($module)) == strtolower($method))
 			{
 				//return $module->$method($arguments);
