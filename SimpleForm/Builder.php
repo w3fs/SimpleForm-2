@@ -27,6 +27,9 @@ class Builder
 
 	/**
 	 * Call the class statically
+	 * 
+	 * @param string The method
+	 * @param array The arguments
 	 */
 
 	public static function __callStatic($method, $arguments)
@@ -35,7 +38,6 @@ class Builder
 		{
 			if (strtolower(get_class($module)) == strtolower($method))
 			{
-				//return $module->$method($arguments);
 				return call_user_func($module . '::' . $method, $arguments);
 			}
 		}
