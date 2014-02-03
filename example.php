@@ -20,3 +20,4 @@ $builder = new FormBuilder\Builder();
  */
 
 $builder->attach(new FormBuilder\Modules\InputModule);
+$builder->attach(new FormBuilder\Modules\HiddenModule);

@@ -99,7 +99,17 @@ class Builder
 
 	public function __call($method, $arguments)
 	{
-		
+		foreach (self::$modules as $module)
+		{
+			if (method_exists($module, $method))
+			{
+				if ($this->resolveIsStatic($module, $method))
+				{
+					return call_user_func(get_class($module) . '::' . $method, $arguments);
+				}
+				return call_user_func(array($module, $method), $arguments);
+			}
+		}
 	}
 
 	/**
