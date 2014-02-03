@@ -6,8 +6,17 @@ error_reporting(-1);
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 
-$builder = require('SimpleForm/autoload.php');
+require('SimpleForm/autoload.php');
 
-print_r($builder->Input());
+/**
+ * Create a new builder instance
+ */
 
-print_r(FormBuilder\Builder::Input());
+
+$builder = new FormBuilder\Builder();
+
+/**
+ * The modules will be attacted under here
+ */
+
+$builder->attach(new FormBuilder\Modules\InputModule);
