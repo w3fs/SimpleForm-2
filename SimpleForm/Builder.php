@@ -36,6 +36,7 @@ class Builder
 	{
 		foreach (self::$modules as $module)
 		{
+			print_r($module);
 			if (strtolower(get_class($module)) == strtolower($method))
 			{
 				return call_user_func($module . '::' . $method, $arguments);
