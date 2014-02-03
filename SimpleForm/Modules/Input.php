@@ -2,7 +2,10 @@
 
 namespace FormBuilder\Modules;
 
-class Input
+class InputModule
 {
-	
+	public static function Input()
+	{
+		return 'It is a static one!';
+	}
 }

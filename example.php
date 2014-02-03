@@ -9,4 +9,4 @@ ini_set('display_startup_errors',1);
 $builder = require('SimpleForm/autoload.php');
 
 
-FormBuilder\Builder::Input();
+print_r(FormBuilder\Builder::Input());

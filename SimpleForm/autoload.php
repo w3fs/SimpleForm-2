@@ -14,12 +14,11 @@ require('Modules/Input.php');
 
 $builder = new FormBuilder\Builder();
 
-
 /**
  * The modules will be attacted under here
  */
 
-$builder->attach(new FormBuilder\Modules\Input);
+$builder->attach(new FormBuilder\Modules\InputModule);
 
 /**
  * Return the builder instance so it is ready to use for the developer

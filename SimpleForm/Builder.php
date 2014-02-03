@@ -2,6 +2,9 @@
 
 namespace FormBuilder;
 
+use ReflectionProperty;
+use ReflectionClass;
+
 class Builder
 {
 
@@ -10,6 +13,13 @@ class Builder
 	 */
 
 	protected static $modules = array();
+
+	protected static $instance;
+
+	public function __construct()
+	{
+		self::$instance = $this;
+	}
 
 	/**
 	 * Attach a given module
@@ -21,8 +31,28 @@ class Builder
 	{
 		if (is_object($module))
 		{
-			self::$modules = $module;
+			self::$modules[] = $module;
 		}
+	}
+
+	protected function resolveIsStatic($object, $method)
+	{
+		$reflection = new ReflectionClass($object);
+
+		$reflection = $reflection->getMethod($method);
+
+		return $reflection->isStatic();
+	}
+
+	protected static function getInstance()
+	{
+		return self::$instance;
+	}
+
+	protected static function extractClassName($module)
+	{
+		$explode = explode('\\', get_class($module));
+		return end($explode);
 	}
 
 	/**
@@ -36,10 +66,13 @@ class Builder
 	{
 		foreach (self::$modules as $module)
 		{
-			print_r($module);
-			if (strtolower(get_class($module)) == strtolower($method))
+			if (method_exists($module, $method))
 			{
-				return call_user_func($module . '::' . $method, $arguments);
+				if (self::getInstance()->resolveIsStatic($module, $method))
+				{
+					return call_user_func(get_class($module) . '::' . $method, $arguments);
+				}
+				return call_user_func(array($module, $method), $arguments);
 			}
 		}
 	}
