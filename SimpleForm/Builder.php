@@ -14,11 +14,19 @@ class Builder
 
 	protected static $modules = array();
 
+	/**
+	 * The current instance of the Builder
+	 */
+
 	protected static $instance;
+
+	/**
+	 * Construct the builder
+	 */
 
 	public function __construct()
 	{
-		self::$instance = $this;
+		self::setInstance($this);
 	}
 
 	/**
@@ -35,6 +43,15 @@ class Builder
 		}
 	}
 
+	/**
+	 * Resolves if a method in a specified method is a static one
+	 *
+	 * @param object The object
+	 * @param string The method to resolve
+	 *
+	 * @return bool The result
+	 */
+
 	protected function resolveIsStatic($object, $method)
 	{
 		$reflection = new ReflectionClass($object);
@@ -43,6 +60,23 @@ class Builder
 
 		return $reflection->isStatic();
 	}
+
+	/**
+	 * Sets the current instane
+	 *
+	 * @param object The instance
+	 */
+
+	protected static function setInstance($instance)
+	{
+		self::$instance = $instance;
+	}
+
+	/**
+	 * Gets the current instance
+	 *
+	 * @return object The instance
+	 */
 
 	protected static function getInstance()
 	{
