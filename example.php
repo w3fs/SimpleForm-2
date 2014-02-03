@@ -6,7 +6,7 @@ error_reporting(-1);
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 
-require('SimpleForm/autoload.php');
+require('vendor/autoload.php');
 
 /**
  * Create a new builder instance
