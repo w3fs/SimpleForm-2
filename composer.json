@@ -1,5 +1,6 @@
 {
     "name": "wvanbreukelen/simple-form",
+    "minimum-stability": "dev",
     "type": "library",
     "description": "SimpleForm, a easy to extend Form Builder",
     "keywords": ["form","builder", "simple", "extendable"],
