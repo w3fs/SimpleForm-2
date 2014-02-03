@@ -1,4 +1,17 @@
 {
+    "name": "wvanbreukelen/flyer-framework",
+    "type": "library",
+    "description": "Flyer, a simple PHP Framework!",
+    "keywords": ["framework","MVC", "simple"],
+    "homepage": "https://github.com/wvanbreukelen/flyer-framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wvanbreukelen",
+            "email": "ikwillerenprogrammeren@gmail.com",
+            "homepage": "https://github.com/wvanbreukelen/flyer-framework"
+        }
+    ],
     "autoload": {
         "classmap": ["SimpleForm"]
     }
