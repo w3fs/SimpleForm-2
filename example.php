@@ -13,13 +13,13 @@ require('SimpleForm/autoload.php');
  */
 
 
-$builder = new FormBuilder\Builder();
+$builder = new SimpleForm\Builder();
 
 /**
  * Attach your own methods under here
  */
 
-$builder->attach(new FormBuilder\Modules\InputModule);
-$builder->attach(new FormBuilder\Modules\HiddenModule);
+$builder->attach(new SimpleForm\Modules\InputModule);
+$builder->attach(new SimpleForm\Modules\HiddenModule);
 
-echo $builder->Hidden();
+echo $builder->Input();

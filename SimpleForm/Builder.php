@@ -1,6 +1,6 @@
 <?php
 
-namespace FormBuilder;
+namespace SimpleForm;
 
 use ReflectionProperty;
 use ReflectionClass;

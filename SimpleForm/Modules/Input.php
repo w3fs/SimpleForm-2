@@ -1,6 +1,6 @@
 <?php
 
-namespace FormBuilder\Modules;
+namespace SimpleForm\Modules;
 
 class InputModule
 {
