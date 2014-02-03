@@ -56,10 +56,25 @@ class Builder
 	}
 
 	/**
+	 * Call the class using the Builder instance provided by the autoloader
+	 * or created by the developer itsself
+	 *
+	 * @param string The method
+	 * @param array The arguments
+	 */
+
+	public function __call($method, $arguments)
+	{
+		
+	}
+
+	/**
 	 * Call the class statically
 	 * 
 	 * @param string The method
 	 * @param array The arguments
+	 *
+	 * @return The parsed HTML Form code
 	 */
 
 	public static function __callStatic($method, $arguments)
