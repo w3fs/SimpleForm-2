@@ -1,5 +1,5 @@
 {
-    "name": "wvanbreukelen/SimpleForm",
+    "name": "wvanbreukelen/simpleform",
     "type": "library",
     "description": "SimpleForm, a easy to extend Form Builder",
     "keywords": ["form","builder", "simple", "extendable"],
