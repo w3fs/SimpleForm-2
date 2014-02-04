@@ -61,6 +61,11 @@ class Builder
 		return $reflection->isStatic();
 	}
 
+	protected function rebuildArguments($arguments)
+	{
+		return if (is_array($arguments)) ? return end($arguments) ? return $arguments;
+	}
+
 	/**
 	 * Sets the current instane
 	 *
@@ -99,6 +104,8 @@ class Builder
 
 	public function __call($method, $arguments)
 	{
+		$arguments = $this->rebuildArguments($arguments);
+
 		foreach (self::$modules as $module)
 		{
 			if (method_exists($module, $method))
@@ -123,6 +130,8 @@ class Builder
 
 	public static function __callStatic($method, $arguments)
 	{
+		$arguments = $this->rebuildArguments($arguments);
+
 		foreach (self::$modules as $module)
 		{
 			if (method_exists($module, $method))
