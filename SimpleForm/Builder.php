@@ -63,7 +63,11 @@ class Builder
 
 	protected function rebuildArguments($arguments)
 	{
-		return (is_array($arguments) ? return end($arguments) ? return $arguments;
+		if (is_array($arguments))
+		{
+			return end($arguments);
+		}
+		return $arguments;
 	}
 
 	/**
