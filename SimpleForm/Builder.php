@@ -61,6 +61,14 @@ class Builder
 		return $reflection->isStatic();
 	}
 
+	/**
+	 * Rebuilds the arguments if var type is array
+	 *
+	 * @param  mixed The arguments
+	 * 
+	 * @return  mixed The arguments
+	 */
+
 	protected function rebuildArguments($arguments)
 	{
 		if (is_array($arguments))
