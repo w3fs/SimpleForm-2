@@ -130,7 +130,7 @@ class Builder
 
 	public static function __callStatic($method, $arguments)
 	{
-		$arguments = $this->rebuildArguments($arguments);
+		$arguments = self::getInstance()->rebuildArguments($arguments);
 
 		foreach (self::$modules as $module)
 		{
