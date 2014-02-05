@@ -16,7 +16,7 @@ require('vendor/autoload.php');
 $builder = new SimpleForm\Builder();
 
 /**
- * Attach your own methods under here
+ * Attach your own modules under here
  */
 
 $builder->attach(new SimpleForm\Modules\InputModule);
